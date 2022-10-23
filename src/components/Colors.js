@@ -4,8 +4,8 @@ export default function Colors(){
     const [loading, setLoading] = React.useState(true);
     const [data, setData] = React.useState(null);
     const [colorsData, setColorsData] = React.useState({
-        count: 2,
-        mode: 'analogic',
+        count: 4,
+        mode: 'monochrome',
         value: '12B298'
     })
 
@@ -19,7 +19,7 @@ export default function Colors(){
           });
       }, [url]);
 
-      function addColorCount(){
+      function addColorCount(event){
         setColorsData(prevColors => ({
             ...prevColors,
             count: prevColors.count + 1
@@ -29,7 +29,7 @@ export default function Colors(){
       function removeColorCount(){
         setColorsData(prevColors => ({
             ...prevColors,
-            count: prevColors.count === 1 ?  1 : prevColors.count - 1
+            count: prevColors.count === 4 ? 4 : prevColors.count - 1
         }))
       }
 
@@ -81,8 +81,11 @@ export default function Colors(){
           </div>
 
           <nav className='navigation'>
-            <button className='add-color-btn' onClick={addColorCount}>+</button>
-            <button className='remove-color-btn' onClick={removeColorCount}>-</button>
+            <div className='buttons-holder'>
+              <button className='remove-color-btn' onClick={removeColorCount}>-</button>
+              <button className='save-btn'>Save</button>
+              <button className='add-color-btn' onClick={addColorCount}>+</button>
+            </div>
           </nav>
         </div>
       )
