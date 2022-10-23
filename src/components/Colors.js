@@ -32,6 +32,10 @@ export default function Colors(){
             count: prevColors.count === 4 ? 4 : prevColors.count - 1
         }))
       }
+      
+      function saveColors(){
+        localStorage.setItem("colors", JSON.stringify(data.colors));
+      }
 
       function handleChange(event) {
         const {name, value, type} = event.target
@@ -84,6 +88,7 @@ export default function Colors(){
             <div className='buttons-holder'>
               <button className='remove-color-btn' onClick={removeColorCount}>-</button>
               <button className='save-btn'>Save</button>
+              <button className='save-btn'>💙</button>
               <button className='add-color-btn' onClick={addColorCount}>+</button>
             </div>
           </nav>
