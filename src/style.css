@@ -61,6 +61,7 @@ label{
   margin-top: .5em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .colorscheme-container{
@@ -134,5 +135,12 @@ label{
 
 
 @media screen and (max-width: 400px) {
-  
+  .color-picker-labels label,
+  .mode-picker-container label{
+    font-size: 0.85rem;
+  }
+
+  .mode-picker-container select{
+    font-size: .85rem;
+  }
 }
