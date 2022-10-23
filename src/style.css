@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  font-family: sans-serif;
+  padding: 1em;
+  background: #212d3b;
+  color: white;
+}
+
+.header-title{
+  text-align: center;
+  /* background: -webkit-linear-gradient(#28ffff, #4e4e4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+  0%,100% {
+      background-position: 0 0;
+  }
+
+  50% {
+      background-position: 100% 0;
+  }
+}
+
+.color-picker-container{
+  margin-top: 1em;
+}
+
+.color-picker-container input{
+  width: 100%;
+  height: 50px;
+}
+
+.color-picker-labels{
+  margin-top: .5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+label{
+  display: block;
+  font-weight: 700;
+}
+
+.mode-picker-container{
+  margin-top: .5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.colorscheme-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.colorscheme-item{
+  text-align: center;
+  width: 140px;
+}
+
+.colorscheme-color{
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.colorscheme-color__hex{
+  margin-top: .5em;
+}
+
+
+.navigation{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.navigation::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.21);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.navigation button{
+  position: absolute;
+  top: -30px;
+  width: 55px;
+  height: 55px;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #17f5f5;
+  font-size: 35px;
+  background: rgba(255, 255, 255, 0.21);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.add-color-btn{
+  right: 30%;
+}
+
+.remove-color-btn{
+  left: 30%;
+}
+
+
+@media screen and (max-width: 400px) {
+  
+}
