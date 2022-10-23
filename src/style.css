@@ -61,6 +61,7 @@ label{
   margin-top: .5em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .colorscheme-container{
@@ -68,6 +69,7 @@ label{
   justify-content: center;
   align-items: center;
   margin-top: 2em;
+  padding-bottom: 70px;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -107,9 +109,16 @@ label{
   -webkit-backdrop-filter: blur(4px);
 }
 
-.navigation button{
+.buttons-holder{
   position: absolute;
   top: -30px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 2em;
+}
+
+.navigation button{
   width: 55px;
   height: 55px;
   outline: none;
@@ -117,22 +126,25 @@ label{
   border-radius: 50%;
   font-weight: bold;
   color: #17f5f5;
-  font-size: 35px;
   background: rgba(255, 255, 255, 0.21);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
 
-.add-color-btn{
-  right: 30%;
-}
-
-.remove-color-btn{
-  left: 30%;
+.add-color-btn,
+.remove-color-btn {
+  font-size: 30px;
 }
 
 
 @media screen and (max-width: 400px) {
-  
+  .color-picker-labels label,
+  .mode-picker-container label{
+    font-size: 0.85rem;
+  }
+
+  .mode-picker-container select{
+    font-size: .85rem;
+  }
 }
