@@ -32,14 +32,20 @@ export default function Colors(){
             count: prevColors.count === 4 ? 4 : prevColors.count - 1
         }))
       }
-      
-      function saveColors(){
-        localStorage.setItem("colors", JSON.stringify(data.colors));
+
+
+      const [savedColors, setSavedColors] = React.useState(JSON.parse(localStorage.getItem('colors')) || []);
+      function saveColors() {
+        setSavedColors(prevSavedColors => {
+          // instead of returning right away create a new array and save it in local storage
+          const updatedColors = [...prevSavedColors, data.colors];
+          localStorage.setItem('colors', JSON.stringify(updatedColors));
+          return updatedColors;
+        });
       }
 
       function handleChange(event) {
         const {name, value, type} = event.target
-        console.log(name);
         setColorsData(prevColors => {
             return {
                 ...prevColors,
@@ -49,7 +55,15 @@ export default function Colors(){
       }
 
     if(loading){
-      return <h1>Loading...</h1>
+      return (
+        <div className='loading-screen'>
+          <h1>Loading...</h1>
+          <div className='spinner'>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      )
     } else {
       return(
         <div className="App">
@@ -83,11 +97,10 @@ export default function Colors(){
               </div>
             ))}
           </div>
-
           <nav className='navigation'>
             <div className='buttons-holder'>
               <button className='remove-color-btn' onClick={removeColorCount}>-</button>
-              <button className='save-btn'>Save</button>
+              <button onClick={saveColors} className='save-btn'>Save</button>
               <button className='save-btn'>💙</button>
               <button className='add-color-btn' onClick={addColorCount}>+</button>
             </div>
