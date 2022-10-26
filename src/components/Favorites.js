@@ -1,14 +1,14 @@
 import React from "react"
 
-export default function Favorites() {
-    const data = JSON.parse(localStorage.getItem('colors'));
-    data.map(item => {
-        item.map(color => {
-            console.log(color.hex.value)
-        })
-    })
+export default function Favorites(props) {
+    const data = (JSON.parse(localStorage.getItem('colors')) || []);
+    // data.map(item => {
+    //     item.map(color => {
+    //         console.log(color.hex.value)
+    //     })
+    // })
     return (
-        <>
+        <div style={{display: props.shown}}>
             <h1>Favorites</h1>
             {
                 data.map(item =>{
@@ -27,6 +27,6 @@ export default function Favorites() {
                     )
                 })
             }
-        </>
+        </div>
     )
 }
