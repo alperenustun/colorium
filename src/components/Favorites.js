@@ -8,7 +8,7 @@ export default function Favorites(props) {
     //     })
     // })
     return (
-        <div style={{display: props.shown}}>
+        <div style={{display: props.shown, paddingBottom: "50px"}}>
             <h1>Favorites</h1>
             {
                 data.map(item =>{

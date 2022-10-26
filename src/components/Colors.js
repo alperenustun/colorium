@@ -73,7 +73,7 @@ export default function Colors() {
   } else {
     return (
       <div className="App">
-        <div style={{display: favoritesShown ? "none" : "block"}}>
+        <div style={{ display: favoritesShown ? "none" : "block" }}>
           <div className='color-picker-container'>
             <input name="value" id='colorPicker' type="color" onChange={handleChange} value={`#${colorsData.value}`} />
             <div className='color-picker-labels'>
@@ -104,17 +104,18 @@ export default function Colors() {
               </div>
             ))}
           </div>
-          <nav className='navigation'>
-            <div className='buttons-holder'>
-              <button className='remove-color-btn' onClick={removeColorCount}>-</button>
-              <button onClick={saveColors} className='save-btn'>Save</button>
-              <button onClick={displayFavorites} className='save-btn'>💙</button>
-              <button className='add-color-btn' onClick={addColorCount}>+</button>
-            </div>
-          </nav>
         </div>
 
-        <Favorites shown={favoritesShown ? "block" : "none"}/>
+        <nav className='navigation'>
+          <div className='buttons-holder'>
+            <button style={{ display: favoritesShown ? "none" : "block" }} className='remove-color-btn' onClick={removeColorCount}>-</button>
+            <button style={{ display: favoritesShown ? "none" : "block" }} onClick={saveColors} className='save-btn'>Save</button>
+            <button onClick={displayFavorites} className='save-btn'>💙</button>
+            <button style={{ display: favoritesShown ? "none" : "block" }} className='add-color-btn' onClick={addColorCount}>+</button>
+          </div>
+        </nav>
+
+        <Favorites shown={favoritesShown ? "block" : "none"} />
       </div>
     )
   }
