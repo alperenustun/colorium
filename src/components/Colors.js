@@ -1,4 +1,5 @@
 import React from 'react'
+import Favorites from './Favorites';
 
 export default function Colors(){
     const [loading, setLoading] = React.useState(true);
@@ -67,6 +68,7 @@ export default function Colors(){
     } else {
       return(
         <div className="App">
+          <Favorites />
           <div className='color-picker-container'>
             <input name="value" id='colorPicker' type="color" onChange={handleChange} value={`#${colorsData.value}`} />
             <div className='color-picker-labels'>
